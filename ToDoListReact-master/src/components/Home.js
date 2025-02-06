@@ -4,7 +4,7 @@ import { AddCircle as AddCircleIcon, ListAlt as ListAltIcon, CheckCircle as Chec
 
 function Home() {
   return (
-    <Container maxWidth="lg" >
+    <Container maxWidth="false" >
       <Box sx={{ textAlign: 'center' }}>
         <Typography variant="h3" component="h1" gutterBottom>
           ברוכים הבאים לאתר ניהול המשימות

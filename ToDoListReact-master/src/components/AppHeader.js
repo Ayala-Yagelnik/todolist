@@ -29,7 +29,7 @@ function AppHeader() {
 
     return (
         <AppBar position="static">
-            <Container >
+            <Container maxWidth={false}>
                 <Toolbar disableGutters>
                     <Typography
                         variant="h6"
