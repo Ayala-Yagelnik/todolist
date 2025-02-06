@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Box, Typography, TextField, Button, Checkbox, IconButton } from '@mui/material';
 import { Edit as EditIcon, Save as SaveIcon } from '@mui/icons-material';
-import service from '../service';
+import service from '../services/toDoSrvice';
 
 const TodoList=()=> {
   const [newTodo, setNewTodo] = useState("");

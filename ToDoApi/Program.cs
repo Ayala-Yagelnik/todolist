@@ -221,10 +221,10 @@ app.MapPost("/api/auth/login", async (ToDoDbContext db,IConfiguration configurat
     {
         return Results.Unauthorized();
     }
- var claims = new List<Claim>()
+        var claims = new List<Claim>()
         {
-            new Claim(ClaimTypes.Name, "malkabr"),
-            new Claim(ClaimTypes.Role, "teacher")
+            new Claim(ClaimTypes.Name, "Ayala"),
+            new Claim(ClaimTypes.Role, "stud")
         };
 
         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]));
