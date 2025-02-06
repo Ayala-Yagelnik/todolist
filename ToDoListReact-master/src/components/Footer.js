@@ -7,8 +7,8 @@ import Typography from "@mui/material/Typography";
 
 const Footer = () => {
     return (
-        <footer>
-           
+        <footer >
+          <Box sx={{ position: 'fixed', bottom: 0, width: '100%', zIndex: 1000 ,backgroundColor:'white'}}>
             <div className="footer-icons">
                 <Typography variant="body2" color="text.secondary" align="center">
                     &copy;
@@ -33,6 +33,7 @@ const Footer = () => {
                     </Link>
                 </Box>
             </div>
+            </Box> 
         </footer>
     );
 };

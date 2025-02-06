@@ -28,7 +28,7 @@ function AppHeader() {
     }, [location.key]);
 
     return (
-        <AppBar position="static">
+        <AppBar sx={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
             <Container maxWidth={false}>
                 <Toolbar disableGutters>
                     <Typography

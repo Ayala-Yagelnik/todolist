@@ -1,21 +1,17 @@
 import React from 'react';
-import { CacheProvider } from '@emotion/react';
-import { CssBaseline, Container, Box } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
-import createCache from '@emotion/cache';
 import { prefixer } from 'stylis';
 import rtlPlugin from 'stylis-plugin-rtl';
 import Layout from './components/Layout';
 import AppRoutes from './AppRoutes';
 
-const cacheRtl = createCache({
-  key: 'muirtl',
-  stylisPlugins: [prefixer, rtlPlugin],
-});
 
 function App() {
   return (
-   
+   <Container
+   maxWidth={false} 
+   sx={{ width: '100%', height: '100%' }}>
       <Layout >
             <Routes>
               {AppRoutes.map((route, index) => {
@@ -25,7 +21,7 @@ function App() {
             </Routes>
   
       </Layout>
-
+</Container>
   );
 }
 

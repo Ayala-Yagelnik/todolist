@@ -1,46 +1,34 @@
 import React from 'react';
-import { Container, Typography, Box, Grid, Paper } from '@mui/material';
-import { AddCircle as AddCircleIcon, ListAlt as ListAltIcon, CheckCircle as CheckCircleIcon } from '@mui/icons-material';
+import { Container, Box, Typography, Button } from '@mui/material';
+import TaskIcon from '@mui/icons-material/Task';
 
-function Home() {
+const Home = () => {
   return (
-    <Container maxWidth="false" >
-      <Box sx={{ textAlign: 'center' }}>
-        <Typography variant="h3" component="h1" gutterBottom>
-          ברוכים הבאים לאתר ניהול המשימות
+    <Container
+      maxWidth="lg"
+      sx={{
+        height: '80vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <Box>
+        <TaskIcon sx={{ fontSize: 100, color: 'primary.main' }} />
+        <Typography variant="h3" gutterBottom>
+          Welcome to Your Task Manager
         </Typography>
-        <Typography variant="h5" component="h2" gutterBottom>
-          נהל את המשימות שלך בקלות וביעילות
+        <Typography variant="h5" gutterBottom>
+          Organize your tasks and boost your productivity!
         </Typography>
-        <Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
-          <Grid item>
-            <Paper elevation={3} sx={{ p: 2, textAlign: 'center' }}>
-              <AddCircleIcon color="primary" sx={{ fontSize: 50 }} />
-              <Typography variant="h6" component="h3" gutterBottom>
-                הוסף משימה חדשה
-              </Typography>
-            </Paper>
-          </Grid>
-          <Grid item>
-            <Paper elevation={3} sx={{ p: 2, textAlign: 'center' }}>
-              <ListAltIcon color="primary" sx={{ fontSize: 50 }} />
-              <Typography variant="h6" component="h3" gutterBottom>
-                רשימת המשימות שלך
-              </Typography>
-            </Paper>
-          </Grid>
-          <Grid item>
-            <Paper elevation={3} sx={{ p: 2, textAlign: 'center' }}>
-              <CheckCircleIcon color="primary" sx={{ fontSize: 50 }} />
-              <Typography variant="h6" component="h3" gutterBottom>
-                משימות שהושלמו
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
+        <Button variant="contained" color="primary" sx={{ mt: 3 }}>
+          Get Started
+        </Button>
       </Box>
     </Container>
   );
-}
+};
 
 export default Home;
