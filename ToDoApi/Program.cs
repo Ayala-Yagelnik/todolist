@@ -49,6 +49,12 @@ app.MapGet("/tasks", async (ToDoDbContext db) =>
     return await db.Items.ToListAsync();
 });
 
+app.MapGet("/tasks/{id}", async (ToDoDbContext db, int id) =>
+{
+    var item = await db.Items.FindAsync(id);
+    return item is not null ? Results.Ok(item) : Results.NotFound();
+});
+
 app.MapPost("/tasks", async (ToDoDbContext db, Item newItem) =>
 {
     db.Items.Add(newItem);
