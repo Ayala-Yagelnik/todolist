@@ -13,21 +13,29 @@ import { useNavigate } from "react-router-dom";
 import Service from "../services/authService";
 import { useState } from "react";
 import Container from "@mui/material/Container";
+import InputAdornment from "@mui/material/InputAdornment";
+import EmailIcon from "@mui/icons-material/Email";
+import LockIcon from "@mui/icons-material/Lock";
 
 export default function Login() {
-  const [name, setName] = useState("default");
-  const [password, setPassword] = useState("123456");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await Service.login(name, password);
-    navigate("/toDoList", { replace: true });
+    try {
+      await Service.login(name, password);
+      navigate("/toDoList", { replace: true });
+    } catch (error) {
+      console.error("Login failed:", error);
+      alert("Login failed. Please try again.");
+    }
   };
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', bgcolor: 'background.default' }}>
       <Box
         sx={{
           marginTop: 8,
@@ -50,10 +58,16 @@ export default function Login() {
             id="name"
             label="כתובת מייל"
             name="username"
-            autoComplete="true"
+            autoComplete="username"
             autoFocus
-            helperText={"שם משתמש ברירת מחדל: default"}
             onChange={(event) => setName(event.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <EmailIcon />
+                </InputAdornment>
+              ),
+            }}
           />
           <TextField
             margin="normal"
@@ -64,30 +78,27 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
-            helperText={"סיסמה ברירת מחדל: 123456"}
             onChange={(event) => setPassword(event.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <LockIcon />
+                </InputAdornment>
+              ),
+            }}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="זכור אותי"
           />
-          
-<Button
-  type="submit"
-  fullWidth
-  variant="contained"
-  sx={{
-    mt: 3,
-    mb: 2,
-    borderRadius: '20px',
-    '&:hover': {
-      backgroundColor: '#dc004e', 
-    },
-  }}
->
-  התחברות
-</Button>
-
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            התחברות
+          </Button>
           <Grid container>
             <Grid item>
               <Link href="/register" variant="body2">
@@ -100,87 +111,3 @@ export default function Login() {
     </Container>
   );
 }
-
-
-// import React, { useState } from 'react';
-// import { Grid,TextField, Button, Container, Typography, Box ,Link} from '@mui/material';
-// import service from '../services/toDoSrvice';
-// import { useNavigate } from "react-router-dom";
-
-
-// const Login=()=> {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const navigate = useNavigate();
-
-//   async function handleLogin(e) {
-//     e.preventDefault();
-//     try {
-//       await service.login(username, password);
-//       navigate("/toDoList", { replace: true });
-
-//     } catch (error) {
-//       alert('Login failed:', error);
-//     }
-//   }
-
-//   return (
-//     <Container maxWidth="xs">
-//       <Box
-//         sx={{
-//           marginTop: 8,
-//           display: 'flex',
-//           flexDirection: 'column',
-//           alignItems: 'center',
-//         }}
-//       >
-//         <Typography component="h1" variant="h5">
-//           Login
-//         </Typography>
-//         <Box component="form" onSubmit={handleLogin} sx={{ mt: 1 }}>
-//           <TextField
-//             margin="normal"
-//             required
-//             fullWidth
-//             id="username"
-//             label="Username"
-//             name="username"
-//             autoComplete="username"
-//             autoFocus
-//             value={username}
-//             onChange={(e) => setUsername(e.target.value)}
-//           />
-//           <TextField
-//             margin="normal"
-//             required
-//             fullWidth
-//             name="password"
-//             label="Password"
-//             type="password"
-//             id="password"
-//             autoComplete="current-password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//           />
-//           <Button
-//             type="submit"
-//             fullWidth
-//             variant="contained"
-//             sx={{ mt: 3, mb: 2 }}
-//           >
-//             Login
-//           </Button>
-//           <Grid container>
-//             <Grid item>
-//               <Link href="/register" variant="body2">
-//                 {"you have not an account yet? register now!!"}
-//               </Link>
-//             </Grid>
-//           </Grid>
-//         </Box>
-//       </Box>
-//     </Container>
-//   );
-// }
-
-// export default Login;

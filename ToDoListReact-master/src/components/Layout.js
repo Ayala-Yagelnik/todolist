@@ -4,56 +4,45 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Link from "@mui/material/Link";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Footer from "./Footer";
 
-function Copyright() {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center">
-        {"Copyright © "}
-ToDoList.com
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    );
-  }
-
- 
-
-  const theme = createTheme({
+const theme = createTheme({
     palette: {
-      primary: {
-        main: '#1976d2', // A modern blue
-      },
-      secondary: {
-        main: '#dc004e', // A modern pink
-      },
-      background: {
-        default: '#f4f6f8', // Light background for better contrast
-      },
+        primary: {
+            main: '#1a237e', // A modern indigo color
+        },
+        secondary: {
+            main: '#ff4081', // A modern pink color
+        },
+        background: {
+            default: '#ffffff', // White background for better contrast
+        },
     },
-  });
+});
 
 const Layout = ({ children }) => {
-  return (
-    <>
-      <div>
-        <AppHeader></AppHeader>
-      </div>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <main>{children}</main>
-        <Box sx={{ bgcolor: "background.paper", p: 1 }} component="footer">
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-        </Typography>
-        <Copyright />
-      </Box>
-      </ThemeProvider>
-    </>
-  );
+    return (
+        <>
+            <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <AppHeader />
+        <Container sx={{width:'100%', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', bgcolor: 'background.default'}} maxWidth="false">
+      
+              
+     
+                <Box component="main" sx={{flexGrow:1,width:'100%'}}>
+                    {children}
+                </Box>
+            </Container>
+
+                <Footer />
+            </ThemeProvider>
+        </>
+    );
 };
 
 export default Layout;
