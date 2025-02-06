@@ -1,0 +1,35 @@
+# Ignore build outputs
+bin/
+obj/
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+# Ignore Rider project files
+.idea/
+# Ignore Visual Studio Code settings
+.vscode/
+# Ignore node_modules
+node_modules/
+# Ignore npm debug log
+npm-debug.log*
+# Ignore environment variables
+.env
+# Ignore logs
+logs/
+*.log
+# Ignore temporary files
+*.tmp
+*.temp
+# Ignore coverage reports
+coverage/
+# Ignore compiled files
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
