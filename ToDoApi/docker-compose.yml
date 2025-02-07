@@ -7,7 +7,7 @@ services:
     image: todoapi
     build:
       context: .
-      dockerfile: ToDoApi/Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - 80:80
       - 443:443
