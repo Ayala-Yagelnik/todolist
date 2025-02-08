@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, Box, Typography, TextField, Button, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Grid, CircularProgress } from '@mui/material';
 import { Edit as EditIcon, Save as SaveIcon, Delete as DeleteIcon, CheckCircle as CheckCircleIcon, Cancel as CancelIcon } from '@mui/icons-material';
 import service from '../services/toDoService';
+import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
+import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState("");
@@ -123,9 +125,9 @@ const TodoList = () => {
                           sx={{ mr: 2 }}
                         >
                           {todo.isComplete ? (
-                            <CheckCircleIcon sx={{ color: 'green' }} />
+                            <DoneRoundedIcon sx={{ color: 'green' }} />
                           ) : (
-                            <CancelIcon sx={{ color: 'red' }} />
+                            <ClearRoundedIcon sx={{ color: 'red' }} />
                           )}
                         </IconButton>
                       </Grid>
