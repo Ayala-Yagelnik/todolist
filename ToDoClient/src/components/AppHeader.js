@@ -63,7 +63,7 @@ function AppHeader() {
           </Box>
           {loginUser ? (
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <IconButton onClick={handleOpenUserMenu} color="secondary.main">
+              <IconButton onClick={handleOpenUserMenu} backgroundcolor='secondary.main'>
               <Avatar alt= 'User'/>
               </IconButton>
               <Menu
