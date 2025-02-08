@@ -68,9 +68,9 @@ function AppHeader() {
                 {loginUser.name}
               </Typography>
               <IconButton onClick={handleOpenUserMenu} color="inherit">
-                <Avatar alt={loginUser.name}>
-                  {loginUser.name ? loginUser.name.charAt(0) : ''}
-                </Avatar>
+              <Avatar alt={loginUser?.name || 'User'}>
+                {loginUser && loginUser.name ? loginUser.name.charAt(0) : ''}
+              </Avatar>
               </IconButton>
               <Menu
                 anchorEl={anchorElUser}
