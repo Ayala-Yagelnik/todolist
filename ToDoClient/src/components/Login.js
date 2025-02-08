@@ -35,10 +35,9 @@ export default function Login() {
   };
 
   return (
-    <Container maxWidth="xs" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', bgcolor: 'background.default' }}>
+    <Container maxWidth="xs" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '80vh', bgcolor: 'background.default' }}>
       <Box
         sx={{
-          marginTop: 8,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -48,7 +47,7 @@ export default function Login() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          התחברות
+          Login
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
@@ -56,7 +55,7 @@ export default function Login() {
             required
             fullWidth
             id="name"
-            label="כתובת מייל"
+            label="name"
             name="username"
             autoComplete="username"
             autoFocus
@@ -74,7 +73,7 @@ export default function Login() {
             required
             fullWidth
             name="password"
-            label="סיסמה"
+            label="password"
             type="password"
             id="password"
             autoComplete="current-password"
@@ -89,7 +88,7 @@ export default function Login() {
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="זכור אותי"
+            label="remember me"
           />
           <Button
             type="submit"
@@ -97,13 +96,11 @@ export default function Login() {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            התחברות
+            login
           </Button>
           <Grid container>
             <Grid item>
-              <Link href="/register" variant="body2">
-                {"אין לך עדין חשבון? להרשמה"}
-              </Link>
+            Don't have an account yet? <Link href="/register">Sign up</Link>
             </Grid>
           </Grid>
         </Box>
