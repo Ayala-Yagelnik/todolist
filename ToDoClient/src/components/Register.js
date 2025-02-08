@@ -35,7 +35,7 @@ function Register() {
   };
 
   return (
-    <Container maxWidth="xs" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '80vh', bgcolor: 'background.default' }}>
+    <Container maxWidth="xs" sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '70vh', bgcolor: 'background.default' }}>
       <Box
         sx={{
           display: "flex",

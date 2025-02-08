@@ -24,7 +24,7 @@ const Home = () => {
         boxShadow: 3,
       }}
     >
-      <Paper elevation={3} sx={{ padding: 4, borderRadius: 2, mb: 4 }}>
+     
         <TaskIcon sx={{ fontSize: 80, color: 'primary.main' }} />
         <Typography variant="h3" component="h1" gutterBottom>
           Welcome to ToDo List
@@ -47,63 +47,8 @@ const Home = () => {
             </Button>
           </Grid>
         </Grid>
-      </Paper>
-      <Grid container spacing={4} justifyContent="center">
-        <Grid item xs={12} md={4}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image="https://source.unsplash.com/random/800x600"
-              alt="Task Management"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Task Management
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Manage your tasks efficiently with our intuitive interface.
-              </Typography>
-            </CardContent>
-          </Card>
+     
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image="https://source.unsplash.com/random/800x601"
-              alt="Productivity Boost"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Productivity Boost
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Increase your productivity with our powerful tools.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image="https://source.unsplash.com/random/800x602"
-              alt="Time Management"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Time Management
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Keep track of your time and never miss a deadline.
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
       <Box sx={{ mt: 4 }}>
         <Typography variant="h4" component="h2" gutterBottom>
           Features
