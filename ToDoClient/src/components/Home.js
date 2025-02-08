@@ -20,6 +20,7 @@ const Home = () => {
         padding: 4,
         borderRadius: 2,
         boxShadow: 3,
+        mb:10
       }}
     >
       <Paper elevation={3} sx={{ padding: 4, borderRadius: 2 }}>
