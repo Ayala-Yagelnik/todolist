@@ -6,11 +6,11 @@ import Typography from "@mui/material/Typography";
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ py: 3, px: 2, mt: 'auto', backgroundColor: 'background.paper' }}>
+    <Box component="footer" sx={{ py: 3, px: 2, mt: 'auto', backgroundColor: 'background.paper' , position: 'fixed', bottom: 0, width: '100%', zIndex: 1000 }}>
       <Typography variant="body2" color="text.secondary" align="center">
         &copy; {new Date().getFullYear()}{" "}
-        <Link color="inherit" href="https://todolist.com/">
-          ToDoList.com
+        <Link color="inherit" href="#">
+          Ayala Yagelnik
         </Link>
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
