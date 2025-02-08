@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{  backgroundColor: 'background.paper' , position: 'fixed', zIndex: 1000 }}>
+    <Box component="footer" position='fixed' sx={{  backgroundColor: 'background.paper' , position: 'fixed', zIndex: 1000 }}>
       <Typography variant="body2" color="text.secondary" align="center">
         &copy; {new Date().getFullYear()}{" "}
         <Link color="inherit" href="#">
