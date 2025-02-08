@@ -19,6 +19,7 @@ const Home = () => {
         alignItems: 'center',
         textAlign: 'center',
         padding: 4,
+        mt:'20px'
       }}
     >
         <TaskIcon sx={{ fontSize: 80, color: 'primary.main' }} />

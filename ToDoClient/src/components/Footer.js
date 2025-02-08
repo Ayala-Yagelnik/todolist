@@ -9,14 +9,17 @@ const Footer = () => {
     <Box 
       component="footer" 
       sx={{ 
-        backgroundColor: 'background.paper', 
-        position: 'fixed', 
-        bottom: 0, 
-        left: 0, 
-        right: 0, 
-        zIndex: 1000,
-        textAlign: 'center', // מרכז את הטקסט
-        p: 2 // הוסף ריפוד
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+        backgroundColor: 'black',
+        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between', 
+        padding: '10px 20px',
+        zIndex: 2000,
       }}
     >
       <Typography variant="body2" color="text.secondary">
