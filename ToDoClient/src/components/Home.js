@@ -12,7 +12,7 @@ const Home = () => {
     <Container
       maxWidth="lg"
       sx={{
-        height: '80vh',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
