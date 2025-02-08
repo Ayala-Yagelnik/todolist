@@ -36,13 +36,8 @@ const Home = () => {
         </Typography>
         <Grid container spacing={2} justifyContent="center" sx={{ mt: 2 }}>
           <Grid item>
-            <Button variant="contained" color="primary" onClick={() => navigate('/toDoList')}>
+            <Button variant="outlined" color="secondary" onClick={() => navigate('/toDoList')}>
               Get Started
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button variant="outlined" color="secondary" onClick={() => navigate('/about')}>
-              Learn More
             </Button>
           </Grid>
         </Grid>

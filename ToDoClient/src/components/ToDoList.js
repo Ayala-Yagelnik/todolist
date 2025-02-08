@@ -8,27 +8,30 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [editTodoId, setEditTodoId] = useState(null);
   const [editTodoName, setEditTodoName] = useState("");
+  const [loading, setLoading] = useState(true);
+
 
   async function getTodos() {
     const todos = await service.getTasks();
     setTodos(todos);
+    setLoading(false);
   }
 
   async function createTodo(e) {
     e.preventDefault();
     await service.addTask(newTodo);
-    setNewTodo(""); // clear input
-    await getTodos(); // refresh tasks list (in order to see the new one)
+    setNewTodo(""); 
+    await getTodos(); 
   }
 
   async function updateCompleted(todo, isComplete) {
     await service.setCompleted(todo.id, isComplete);
-    await getTodos(); // refresh tasks list (in order to see the updated one)
+    await getTodos(); 
   }
 
   async function deleteTodo(id) {
     await service.deleteTask(id);
-    await getTodos(); // refresh tasks list
+    await getTodos(); 
   }
 
   async function startEditing(todo) {
@@ -44,9 +47,18 @@ const TodoList = () => {
   }
 
   useEffect(() => {
-    getTodos();
-  }, []);
+    const interval = setInterval(() => {
+      if (loading) {
+        getTodos();
+      }
+    }, 2000);
 
+    getTodos();
+
+    return () => clearInterval(interval);
+  }, [loading]);
+
+  
   return (
     <Container maxWidth="lg">
       <Box sx={{ my: 4 }}>
@@ -66,6 +78,14 @@ const TodoList = () => {
             Add Task
           </Button>
         </form>
+
+        {loading ? (
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            <CircularProgress />
+            <p style={{ marginLeft: '10px' }}>Loading...</p>
+          </div>
+        ) : (
+        
         <Box sx={{ mt: 4 }}>
           <Paper>
             <List>
@@ -104,7 +124,7 @@ const TodoList = () => {
                       <IconButton
                         edge="end"
                         onClick={() => updateCompleted(todo, !todo.isComplete)}
-                        sx={{ mr: 2 }} // Add margin to the left for spacing
+                        sx={{ mr: 2 }}
                       >
                         {todo.isComplete ? (
                           <CheckCircleIcon sx={{ color: 'green' }} />
@@ -120,9 +140,12 @@ const TodoList = () => {
             </List>
           </Paper>
         </Box>
+        );
+        }
       </Box>
     </Container>
   );
+
 }
 
 export default TodoList;
