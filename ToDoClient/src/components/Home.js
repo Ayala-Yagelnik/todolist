@@ -11,14 +11,7 @@ const Home = () => {
   return (
     <Container
       maxWidth="lg"
-      sx={{
-        height: '80vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-      }}
+      sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '70vh' }}
     >
         <TaskIcon sx={{ fontSize: 80, color: 'primary.main' }} />
         <Typography variant="h3" component="h1" gutterBottom>
