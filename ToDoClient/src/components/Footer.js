@@ -14,10 +14,11 @@ const Footer = () => {
         left: 0,
         width: '100%',
         backgroundColor: '#f5f5f5',
-        color: 'white',
         display: 'flex',
-        alignItems: 'center',
+        flexDirection: 'column',
         justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
         zIndex: 2000,
       }}
     >
