@@ -18,7 +18,9 @@ function AppHeader() {
   useEffect(() => {
     setLoginUser(authService.getLoginUser());
   }, [location.key]);
-
+  useEffect(() => {
+    console.log(loginUser);
+  }, [loginUser]);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
