@@ -18,9 +18,7 @@ function AppHeader() {
   useEffect(() => {
     setLoginUser(authService.getLoginUser());
   }, [location.key]);
-  useEffect(() => {
-    console.log(loginUser);
-  }, [loginUser]);
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -65,13 +63,8 @@ function AppHeader() {
           </Box>
           {loginUser ? (
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Typography variant="body1" sx={{ mr: 2 }}>
-                {loginUser.name}
-              </Typography>
-              <IconButton onClick={handleOpenUserMenu} color="inherit">
-              <Avatar alt={loginUser?.name || 'User'}>
-                {loginUser && loginUser.name ? loginUser.name.charAt(0) : ''}
-              </Avatar>
+              <IconButton onClick={handleOpenUserMenu} color="secondary">
+              <Avatar alt= 'User'/>
               </IconButton>
               <Menu
                 anchorEl={anchorElUser}

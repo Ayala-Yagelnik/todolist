@@ -47,7 +47,7 @@ const Home = () => {
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <CheckCircleIcon sx={{ fontSize: 60, color: 'primary.main' }} />
+              <CheckCircleIcon sx={{ fontSize: 60, color:"secondary" }} />
               <Typography variant="h6" component="h3" gutterBottom>
                 Easy to Use
               </Typography>
@@ -58,7 +58,7 @@ const Home = () => {
           </Grid>
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <AccessTimeIcon sx={{ fontSize: 60, color: 'primary.main' }} />
+              <AccessTimeIcon sx={{ fontSize: 60, color: 'secondary' }} />
               <Typography variant="h6" component="h3" gutterBottom>
                 Time Management
               </Typography>
@@ -69,7 +69,7 @@ const Home = () => {
           </Grid>
           <Grid item xs={12} md={4}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <TaskIcon sx={{ fontSize: 60, color: 'primary.main' }} />
+              <TaskIcon sx={{ fontSize: 60, color: 'secondary' }} />
               <Typography variant="h6" component="h3" gutterBottom>
                 Task Tracking
               </Typography>
