@@ -13,12 +13,11 @@ const Footer = () => {
         bottom: 0,
         left: 0,
         width: '100%',
-        backgroundColor: 'black',
+        backgroundColor: '#f5f5f5',
         color: 'white',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between', 
-        padding: '10px 20px',
+        justifyContent: 'center',
         zIndex: 2000,
       }}
     >
