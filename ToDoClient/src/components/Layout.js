@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <>
       <AppHeader />
       <Container maxWidth="lg">
-        <Box component="main" sx={{ flexGrow: 1 ,mt:30,mb:30}}>
+        <Box component="main" sx={{ flexGrow: 1 ,mt:20,mb:20}}>
           {children}
         </Box>
       </Container>
