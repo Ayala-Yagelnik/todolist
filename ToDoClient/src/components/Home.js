@@ -1,6 +1,8 @@
 import React from 'react';
-import { Container, Box, Typography, Button, Grid, Paper } from '@mui/material';
+import { Container, Box, Typography, Button, Grid, Paper, Card, CardContent, CardMedia } from '@mui/material';
 import TaskIcon from '@mui/icons-material/Task';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -10,7 +12,7 @@ const Home = () => {
     <Container
       maxWidth="lg"
       sx={{
-        height: '80vh',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -20,10 +22,9 @@ const Home = () => {
         padding: 4,
         borderRadius: 2,
         boxShadow: 3,
-        mb:10
       }}
     >
-      <Paper elevation={3} sx={{ padding: 4, borderRadius: 2 }}>
+      <Paper elevation={3} sx={{ padding: 4, borderRadius: 2, mb: 4 }}>
         <TaskIcon sx={{ fontSize: 80, color: 'primary.main' }} />
         <Typography variant="h3" component="h1" gutterBottom>
           Welcome to ToDo List
@@ -47,44 +48,104 @@ const Home = () => {
           </Grid>
         </Grid>
       </Paper>
+      <Grid container spacing={4} justifyContent="center">
+        <Grid item xs={12} md={4}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://source.unsplash.com/random/800x600"
+              alt="Task Management"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Task Management
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Manage your tasks efficiently with our intuitive interface.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://source.unsplash.com/random/800x601"
+              alt="Productivity Boost"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Productivity Boost
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Increase your productivity with our powerful tools.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://source.unsplash.com/random/800x602"
+              alt="Time Management"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Time Management
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Keep track of your time and never miss a deadline.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+      <Box sx={{ mt: 4 }}>
+        <Typography variant="h4" component="h2" gutterBottom>
+          Features
+        </Typography>
+        <Grid container spacing={4} justifyContent="center">
+          <Grid item xs={12} md={4}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <CheckCircleIcon sx={{ fontSize: 60, color: 'primary.main' }} />
+              <Typography variant="h6" component="h3" gutterBottom>
+                Easy to Use
+              </Typography>
+              <Typography variant="body2" color="text.secondary" align="center">
+                Our app is designed to be user-friendly and easy to navigate.
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <AccessTimeIcon sx={{ fontSize: 60, color: 'primary.main' }} />
+              <Typography variant="h6" component="h3" gutterBottom>
+                Time Management
+              </Typography>
+              <Typography variant="body2" color="text.secondary" align="center">
+                Keep track of your time and manage your tasks efficiently.
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <TaskIcon sx={{ fontSize: 60, color: 'primary.main' }} />
+              <Typography variant="h6" component="h3" gutterBottom>
+                Task Tracking
+              </Typography>
+              <Typography variant="body2" color="text.secondary" align="center">
+                Track your tasks and stay on top of your to-do list.
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
     </Container>
   );
 };
 
 export default Home;
-
-
-// import React from 'react';
-// import { Container, Box, Typography, Button } from '@mui/material';
-// import TaskIcon from '@mui/icons-material/Task';
-
-// const Home = () => {
-//   return (
-//     <Container
-//       maxWidth="lg"
-//       sx={{
-//         height: '80vh',
-//         display: 'flex',
-//         flexDirection: 'column',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         textAlign: 'center',
-//       }}
-//     >
-//       <Box>
-//         <TaskIcon sx={{ fontSize: 100, color: 'primary.main' }} />
-//         <Typography variant="h3" gutterBottom>
-//           Welcome to Your Task Manager
-//         </Typography>
-//         <Typography variant="h5" gutterBottom>
-//           Organize your tasks and boost your productivity!
-//         </Typography>
-//         <Button variant="contained" color="primary" sx={{ mt: 3 }}>
-//           Get Started
-//         </Button>
-//       </Box>
-//     </Container>
-//   );
-// };
-
-// export default Home;
