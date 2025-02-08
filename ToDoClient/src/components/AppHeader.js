@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import authService from "../services/authService";
 
 const pages = [
-  { title: "Tasks", route: "/toDoList", icon: <ListAltIcon /> },
+  { title: "Tasks", route: "/toDoList"},
 ];
 
 function AppHeader() {
@@ -57,7 +57,6 @@ function AppHeader() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button key={page.title} color="inherit" onClick={() => navigate(page.route)}>
-                {page.icon}
                 {page.title}
               </Button>
             ))}
