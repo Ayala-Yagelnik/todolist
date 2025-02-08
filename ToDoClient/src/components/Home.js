@@ -18,10 +18,7 @@ const Home = () => {
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        backgroundColor: '#f5f5f5',
         padding: 4,
-        borderRadius: 2,
-        boxShadow: 3,
       }}
     >
         <TaskIcon sx={{ fontSize: 80, color: 'primary.main' }} />
