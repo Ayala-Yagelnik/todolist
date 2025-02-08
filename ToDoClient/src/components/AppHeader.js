@@ -69,7 +69,7 @@ function AppHeader() {
               </Typography>
               <IconButton onClick={handleOpenUserMenu} color="inherit">
                 <Avatar alt={loginUser.name}>
-                  {loginUser.name.charAt(0)}
+                  {loginUser.name ? loginUser.name.charAt(0) : ''}
                 </Avatar>
               </IconButton>
               <Menu
