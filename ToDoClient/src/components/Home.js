@@ -12,13 +12,12 @@ const Home = () => {
     <Container
       maxWidth="lg"
       sx={{
-        height: '100vh',
+        height: '80vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         textAlign: 'center',
-        padding: 4,
       }}
     >
         <TaskIcon sx={{ fontSize: 80, color: 'primary.main' }} />
