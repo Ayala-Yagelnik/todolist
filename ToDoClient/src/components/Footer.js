@@ -13,7 +13,7 @@ const Footer = () => {
         bottom: 0,
         left: 0,
         width: '100%',
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#ffffff',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -22,7 +22,7 @@ const Footer = () => {
         zIndex: 2000,
       }}
     >
-      <Typography variant="body2" color="text.secondary">
+      <Typography sx={{mt:2}} variant="body2" color="text.secondary">
         &copy; {new Date().getFullYear()}{" "}
         <Link color="inherit" href="#">
           Ayala Yagelnik
