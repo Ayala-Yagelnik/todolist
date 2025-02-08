@@ -24,7 +24,6 @@ const Home = () => {
         boxShadow: 3,
       }}
     >
-     
         <TaskIcon sx={{ fontSize: 80, color: 'primary.main' }} />
         <Typography variant="h3" component="h1" gutterBottom>
           Welcome to ToDo List
@@ -47,8 +46,8 @@ const Home = () => {
             </Button>
           </Grid>
         </Grid>
+   
      
-        </Grid>
       <Box sx={{ mt: 4 }}>
         <Typography variant="h4" component="h2" gutterBottom>
           Features
