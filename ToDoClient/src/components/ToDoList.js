@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Box, Typography, TextField, Button, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction, Grid } from '@mui/material';
+import { Container, Box, Typography, TextField, Button, IconButton, Paper, List, ListItem, ListItemIcon, ListItemText, Grid, CircularProgress } from '@mui/material';
 import { Edit as EditIcon, Save as SaveIcon, Delete as DeleteIcon, CheckCircle as CheckCircleIcon, Cancel as CancelIcon } from '@mui/icons-material';
 import service from '../services/toDoService';
 
@@ -9,7 +9,6 @@ const TodoList = () => {
   const [editTodoId, setEditTodoId] = useState(null);
   const [editTodoName, setEditTodoName] = useState("");
   const [loading, setLoading] = useState(true);
-
 
   async function getTodos() {
     const todos = await service.getTasks();
@@ -58,7 +57,6 @@ const TodoList = () => {
     return () => clearInterval(interval);
   }, [loading]);
 
-  
   return (
     <Container maxWidth="lg">
       <Box sx={{ my: 4 }}>
@@ -85,67 +83,62 @@ const TodoList = () => {
             <p style={{ marginLeft: '10px' }}>Loading...</p>
           </div>
         ) : (
-        
-        <Box sx={{ mt: 4 }}>
-          <Paper>
-            <List>
-              {todos.map(todo => (
-                <ListItem key={todo.id} dense>
-                  <Grid container alignItems="center">
-                    <Grid  item>
-                    <IconButton sx={{ml:1}} edge="start" onClick={() => deleteTodo(todo.id)}>
-                        <DeleteIcon />
-                      </IconButton>
-                      {editTodoId === todo.id ? (
-                        <IconButton edge="start" onClick={saveEditTodo}>
-                          <SaveIcon />
+          <Box sx={{ mt: 4 }}>
+            <Paper>
+              <List>
+                {todos.map(todo => (
+                  <ListItem key={todo.id} dense>
+                    <Grid container alignItems="center">
+                      <Grid item>
+                        <IconButton sx={{ ml: 1 }} edge="start" onClick={() => deleteTodo(todo.id)}>
+                          <DeleteIcon />
                         </IconButton>
-                      ) : (
-                        <IconButton edge="start" onClick={() => startEditing(todo)}>
-                          <EditIcon />
-                        </IconButton>
-                      )}
-                     
-                    </Grid>
-                    <Grid item xs>
-                      {editTodoId === todo.id ? (
-                        <TextField
-                          value={editTodoName}
-                          onChange={(e) => setEditTodoName(e.target.value)}
-                          variant="outlined"
-                          size="small"
-                          fullWidth
-                        />
-                      ) : (
-                        <ListItemText primary={todo.name} />
-                      )}
-                    </Grid>
-                    <Grid item>
-                      <IconButton
-                        edge="end"
-                        onClick={() => updateCompleted(todo, !todo.isComplete)}
-                        sx={{ mr: 2 }}
-                      >
-                        {todo.isComplete ? (
-                          <CheckCircleIcon sx={{ color: 'green' }} />
+                        {editTodoId === todo.id ? (
+                          <IconButton edge="start" onClick={saveEditTodo}>
+                            <SaveIcon />
+                          </IconButton>
                         ) : (
-                          <CancelIcon sx={{ color: 'red' }} />
+                          <IconButton edge="start" onClick={() => startEditing(todo)}>
+                            <EditIcon />
+                          </IconButton>
                         )}
-                      </IconButton>
+                      </Grid>
+                      <Grid item xs>
+                        {editTodoId === todo.id ? (
+                          <TextField
+                            value={editTodoName}
+                            onChange={(e) => setEditTodoName(e.target.value)}
+                            variant="outlined"
+                            size="small"
+                            fullWidth
+                          />
+                        ) : (
+                          <ListItemText primary={todo.name} />
+                        )}
+                      </Grid>
+                      <Grid item>
+                        <IconButton
+                          edge="end"
+                          onClick={() => updateCompleted(todo, !todo.isComplete)}
+                          sx={{ mr: 2 }}
+                        >
+                          {todo.isComplete ? (
+                            <CheckCircleIcon sx={{ color: 'green' }} />
+                          ) : (
+                            <CancelIcon sx={{ color: 'red' }} />
+                          )}
+                        </IconButton>
+                      </Grid>
                     </Grid>
-                  </Grid>
-                </ListItem>
-
-              ))}
-            </List>
-          </Paper>
-        </Box>
-        );
-        }
+                  </ListItem>
+                ))}
+              </List>
+            </Paper>
+          </Box>
+        )}
       </Box>
     </Container>
   );
-
 }
 
 export default TodoList;
