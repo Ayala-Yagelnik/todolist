@@ -33,3 +33,5 @@ coverage/
 # Ignore OS generated files
 .DS_Store
 Thumbs.db
+#Ignore visual studio files
+.vs/
